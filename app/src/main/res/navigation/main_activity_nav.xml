@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.gulsah.bottomnavpractice.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" />
+    <fragment
+        android:id="@+id/toplaFragment"
+        android:name="com.gulsah.bottomnavpractice.ToplaFragment"
+        android:label="fragment_topla"
+        tools:layout="@layout/fragment_topla" >
+        <action
+            android:id="@+id/toplaGecis"
+            app:destination="@id/toplaSonucFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carpFragment"
+        android:name="com.gulsah.bottomnavpractice.CarpFragment"
+        android:label="fragment_carp"
+        tools:layout="@layout/fragment_carp" >
+        <action
+            android:id="@+id/carpGecis"
+            app:destination="@id/carpSonucFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carpSonucFragment"
+        android:name="com.gulsah.bottomnavpractice.CarpSonucFragment"
+        android:label="fragment_carp_sonuc"
+        tools:layout="@layout/fragment_carp_sonuc" >
+        <argument
+            android:name="carpSonuc"
+            app:argType="string"
+            android:defaultValue="yok" />
+    </fragment>
+    <fragment
+        android:id="@+id/toplaSonucFragment"
+        android:name="com.gulsah.bottomnavpractice.ToplaSonucFragment"
+        android:label="fragment_topla_sonuc"
+        tools:layout="@layout/fragment_topla_sonuc" >
+        <argument
+            android:name="toplaSonuc"
+            app:argType="string"
+            android:defaultValue="yok" />
+    </fragment>
+</navigation>
